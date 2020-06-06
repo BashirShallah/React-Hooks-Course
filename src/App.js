@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {LoginFormC, LoginFormF} from './LoginForm';
 
 function App() {
+
+  const [visisble, setVisible] = useState(true);
+
   return (
     <div>
-      <LoginFormC />
-      <LoginFormF />
+      {visisble ? <>
+        <LoginFormC />
+        <LoginFormF />
+      </> : null}
+
+      <button onClick={() => setVisible(! visisble)}>Toggle</button>
     </div>
   );
 }
